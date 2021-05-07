@@ -1,0 +1,62 @@
+-DIPARTIMENTO
+
+    sede: VARCHAR(64) ; NOT NULLABLE
+    contatti: VARCHAR(64) ; NOT NULLABLE
+    facoltà: VARCHAR(32) ; NOT NULLABLE
+
+-CORSO DI LAUREA
+
+    tipologia: VARCHAR(64); NOT NULLABLE
+    materie: TEXT ; NOT NULLABLE
+    ammissioni: INT ; NOT NULLABLE
+
+
+-CORSO
+
+    durata: VARCHAR(64); NOT NULLABLE
+    programma: TEXT; NOT NULLABLE
+    docente: VARCHAR(32); NOT NULLABLE
+    frequenza: TINYINT; NOT NULLABLE
+    ore_totali: INT; NOT NULLABLE
+
+-INSEGNANTE
+
+    nome: VARCHAR(32) ; NOT NULLABLE
+    cognome: VARCHAR(32) ; NOT NULLABLE
+    indirizzo: VARCHAR(64); NOT NULLABLE
+    n_tel: VARCHAR(16) ; NOT NULLABLE
+    data_nascita: DATE ; NOT NULLABLE
+    cf: VARCHAR(32) ; NOT NULLABLE ; UNIQUE
+    email: VARCHAR(64) ; NOT NULLABLE ; UNIQUE
+    materia: VARCHAR(32) ; NOT NULLABLE
+    ruolo: VARCHAR(32) ; NOT NULLABLE
+    salario: INT ; NOT NULLABLE
+    turni: VARCHAR(64) ; NOT NULLABLE
+
+-APPELLO
+
+    cognome_studente: VARCHAR(32) ; NOT NULLABLE
+    nome_studente: VARCHAR(32) ; NOT NULLABLE
+    telefono: VARCHAR(16) ; NULLABLE
+    genere: VARCHAR(16) ; NOT NULLABLE
+
+-STUDENTE
+
+    cognome_studente: VARCHAR(32) ; NOT NULLABLE
+    nome_studente: VARCHAR(32) ; NOT NULLABLE
+    telefono: VARCHAR(16) ; NULLABLE
+    email: VARCHAR(64) ; NOT NULLABLE ; UNIQUE
+    genere: VARCHAR(16) ; NOT NULLABLE
+    data_nascita: DATE ; NOT NULLABLE
+    cf: VARCHAR(64) ; NOT NULLABLE ; UNIQUE
+    tipo_documento: VARCHAR(16) ; NOT NULLABLE
+    numero_documento: VARCHAR(32) ; NOT NULLABLE ; UNIQUE
+    media_voti: TINYINT; NOT NULLABLE
+
+
+-ESITO
+
+    esami_sostenuti: TINYINT ; NOT NULLABLE
+    ore_presenza: TINYINT ; NOT NULLABLE
+    ore_assenza: TINYINT ; NOT NULLABLE
+    media_voti: TINYINT ; NOT NULLABLE
